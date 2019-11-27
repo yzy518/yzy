@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        相当于把HelloSpring的实例注入到了spring容器中
+        HelloSpring helloSpring = new HelloSpring()
+    -->
+    <bean id="helloSpring" class="cn.kgc.spring.bean.HelloSpring">
+        <!--
+            helloSpring.setWords("Hello,Sprng!")
+        -->
+        <property name="words" value="Hello,Sprng!"/>
+    </bean>
+
+    <bean id="daGuiZi" class="cn.kgc.spring.bean.DaGuiZi">
+        <!--<property name="who" value="张嘎"/>
+        <property name="words" value="三天不打小鬼子,手就痒痒"/>-->
+        <constructor-arg index="0" name="who" value="张嘎"/>
+        <constructor-arg index="1" name="words" value="三天不打小鬼子,手就痒痒"/>
+    </bean>
+
+</beans>
